@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "dom": "^0.0.3",
+    "gh-pages": "^6.1.1",
     "jquery": "^3.7.1",
     "stats.js": "^0.17.0",
     "three": "^0.164.1"
