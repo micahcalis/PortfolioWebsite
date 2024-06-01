@@ -1,7 +1,8 @@
-import * as THREE from 'https://unpkg.com/three@0.165.0/build/three.module.js';
+import * as THREE from 'three';
 import { RayMarch } from './RayMarch.js';
 import { FullscreenUnlit } from './FullscreenUnlit.js';
-import { Timer } from 'https://unpkg.com/three@0.165.0/build/three.module.js/addons/misc/Timer.js';
+import { Timer } from 'three/addons/misc/Timer.js';
+import Stats from 'stats.js'
 
 // set scenes and camera
 const fov = 75;
@@ -68,6 +69,11 @@ addEventListener("resize",() => {
     console.log("resize");
     renderer.setSize(window.innerWidth, window.innerHeight);
 },false);
+
+// stats
+const stats = new Stats();
+stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+document.body.appendChild(stats.dom);
 
 // framerate
 var fps = 60;
@@ -292,7 +298,8 @@ function animate( timestamp ) {
     delta = now - then;
     
 	// execute code at 'fps' frames per second
-    if (delta > interval) {       
+    if (delta > interval) {      
+		stats.begin()  
         then = now - (delta % interval);
          
 		setMaterial( t );
@@ -319,6 +326,7 @@ function animate( timestamp ) {
 		// renderTarget.height = window.innerHeight;
 	
 		renderPipeline();
+		stats.end()
     }
 }
 
