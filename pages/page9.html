@@ -1,0 +1,45 @@
+<div class="header">
+    <h1>Shader Experiments</h1>
+    <button id="closeTab">
+        <i class="gg-close-r"></i>
+    </button>
+</div>
+<div class="container">
+    <h3>Solo Project - My Inidividual Endeavors</h3>
+    <p>This page contains some of my personal experiments that serve to develop my skills as a technical artist.</p>
+    <h4>'Dots' Image Effect</h4>
+    <img class = "rect" src = "pages/images/page 9/2.gif">
+    <p>This image effect shader was inspired by an artwork located at the train station in Utrecht, called ‘Lichaam en Geest’, made by studio <a href="https://www.polylester.com/" target="blank">PolyLester</a>. The shader divides the screen into a set number of cells, where the distance to the center of each cell creates the ‘dot’ shapes. The dot size is decided by the HSV brightness / value, which tricks the mind into recognizing shapes with shadows. Finally, the color of the dots simply comes from the image, however, the image texture is sampled at the same resolution as the number of cells, and the color is adjusted by setting the brightness to the maximum, since the brightness / value was already used for the dot size. </p>
+    <h4>Exploring the Gaussian Blur</h4>
+    <img class = "rect" src = "pages/images/page 9/3.gif">
+    <p>This cartoon-like effect uses the gaussian blur in several different ways to create this final composition. Firstly, it uses a technique that subtracts two blurs from each other, with a different standard deviation. This produces the cartoon-like shading. Then, this value is posterized, which enables the use of a custom color-ramp, making the effect quite versatile.</p>
+    <img class = "rect" src = "pages/images/page 9/4.png">
+    <img class = "rect" src = "pages/images/page 9/5.png">
+    <img class = "rect" src = "pages/images/page 9/6.png">
+    <img class = "rect" src = "pages/images/page 9/7.png">
+    <p>Secondly, I used the gaussian blur to add a depth of field effect to the post processing. To create a cinematic look, I also added a near-field blur. Both the intensity of the blurs and the depth thresholds are fully customisable.</p>
+    <img class = "rect" src = "pages/images/page 9/8.png">
+    <img class = "rect" src = "pages/images/page 9/9.png">
+    <p>The green channel indicates the intensity of the far field blur, and the red channel shows the intensity of the near field blur.</p>
+    <h4>Post-Processing Outlines</h4>
+    <img class = "rect" src = "pages/images/page 9/10.gif">
+    <p>I have tried a few outline techniques before, but to me the Laplacian Operator works the best. It picks up on a lot of details and is quite consistent. The following matrix shows how the pixels are weighted to create the outlines.</p>
+    <img class = "small" src = "pages/images/page 9/11.png">
+    <p>The detail on the outlines is a double-edge sword, because simply using this operator on the depth and world-normal textures of the image will result in very noisy outlines. Therefore, it is imperative to blur (gaussian) both of these textures beforehand, then apply the operator. </p>
+    <p>Lastly, the effect is finished by adding anti-aliasing to the outlines. To stylize this scene, I removed all the shading from the objects, and added a paper texture as an overlay (sample is offset using world normals).</p>
+    <h4>Volumetric Clouds</h4>
+    <img class = "rect" src = "pages/images/page 9/12.gif">
+    <p>This is a volumetric cloud effect, heavily inspired by the techniques used by <a href="https://www.guerrilla-games.com/read/the-real-time-volumetric-cloudscapes-of-horizon-zero-dawn" target="blank">Guerilla</a>. The effect uses a raymarcher that builds up the cloud shapes by continuously sampling 3D noise (worley & perlin) textures to build the cloud shapes. </p>
+    <p>It works as a post-processing effect, and has several parameters such as:</p>
+    <p>Coverage</p>
+    <img class = "rect" src = "pages/images/page 9/13.gif">
+    <p>Cloud Height</p>
+    <img class = "rect" src = "pages/images/page 9/14.gif">
+    <p>The 3D noise textures are all generated in a compute shader, with a total of 7 different textures. Since the noise is greyscale, we are able to fit this data into two 3D textures, using the RGBA values separately. This greatly increases the performance of the shader, since 3D texture sampling is quite expensive.</p>
+    <img class = "rect" src = "pages/images/page 9/15.png">
+    <p>The top row consists of the textures for the shape of the clouds (128 x 128 x 128), and the bottom row consists of the textures used for detail (32 x 32 x 32).</p>
+    <ul>References:
+        <li><a href="https://assetstore.unity.com/packages/3d/environments/landscapes/free-low-poly-nature-forest-205742" target="blank">Environment models</a></li>
+    </ul>
+    <p class="bottom"></p>
+</div>
