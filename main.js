@@ -1,8 +1,8 @@
-import * as THREE from 'https://micahcalis.github.io/three';
-import { RayMarch } from 'https://micahcalis.github.io/RayMarch.js';
-import { FullscreenUnlit } from 'https://micahcalis.github.io/FullscreenUnlit.js';
-import { Timer } from 'https://micahcalis.github.io/three/addons/misc/Timer.js';
-import Stats from 'https://micahcalis.github.io/stats.js'
+import * as THREE from 'https://unpkg.com/three/build/three.module.js';
+import { RayMarch } from './RayMarch.js';
+import { FullscreenUnlit } from './FullscreenUnlit.js';
+import { Timer } from 'three/addons/misc/Timer.js';
+import Stats from 'stats.js'
 
 // set scenes and camera
 const fov = 75;
