@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from 'three/build/three.module.js';
 import { RayMarch } from './RayMarch.js';
 import { FullscreenUnlit } from './FullscreenUnlit.js';
 import { Timer } from 'three/addons/misc/Timer.js';
