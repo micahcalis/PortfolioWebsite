@@ -1,8 +1,8 @@
-import * as THREE from 'three';
+import * as THREE from './node_modules/three/build/three.module.js';
 import { RayMarch } from './RayMarch.js';
 import { FullscreenUnlit } from './FullscreenUnlit.js';
 import { Timer } from 'three/addons/misc/Timer.js';
-import Stats from 'stats.js'
+import Stats from './node_modules/stats.js'
 
 // set scenes and camera
 const fov = 75;
