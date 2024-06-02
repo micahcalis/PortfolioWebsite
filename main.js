@@ -4,7 +4,7 @@ import { FullscreenUnlit } from './FullscreenUnlit.js';
 import { Timer } from 'https://unpkg.com/three@0.165.0/examples/jsm/misc/Timer.js';
 
 // set scenes and camera
-const fov = 75;n
+const fov = 75;
 let scene = new THREE.Scene();
 let scene2 = new THREE.Scene();
 const camera = new THREE.OrthographicCamera( -1, 1, 1, -1, 0, 1 );
