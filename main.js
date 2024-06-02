@@ -1,7 +1,7 @@
 import * as THREE from 'https://unpkg.com/three@0.165.0/build/three.module.js';
 import { RayMarch } from './RayMarch.js';
 import { FullscreenUnlit } from './FullscreenUnlit.js';
-import { Timer } from 'https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/misc/Timer.js';
+import { Timer } from 'three/addons/": "https://unpkg.com/three@0.156.0/examples/jsm/misc/Timer.js';
 
 // set scenes and camera
 const fov = 75;
