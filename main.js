@@ -1,4 +1,4 @@
-import * as THREE from './node_modules/three/build/three.module.js';
+import * as THREE from 'three';
 import { RayMarch } from './RayMarch.js';
 import { FullscreenUnlit } from './FullscreenUnlit.js';
 import { Timer } from 'three/addons/misc/Timer.js';
@@ -319,6 +319,11 @@ function animate( timestamp ) {
 		exitButton();
 
 		handleCursor();
+		console.log(mouse);
+		// renderTarget = new THREE.WebGLRenderTarget( window.innerWidth, window.innerHeight, { 
+		// 	format: THREE.RGBAFormat, type: THREE.FloatType });
+		// renderTarget.width = window.innerWidth;
+		// renderTarget.height = window.innerHeight;
 	
 		renderPipeline();
 		stats.end()

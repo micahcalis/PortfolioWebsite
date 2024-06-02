@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "vite build",
+    "build": "vite build",
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],
@@ -14,10 +14,8 @@
   "dependencies": {
     "dom": "^0.0.3",
     "gh-pages": "^6.1.1",
-    "github": "^14.0.0",
     "jquery": "^3.7.1",
     "stats.js": "^0.17.0",
-    "three": "^0.164.1",
-    "vite": "^5.2.12"
+    "three": "^0.164.1"
   }
 }
